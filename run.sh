@@ -1,14 +1,12 @@
 #!/bin/bash
-
 # Name of the output file
 output_file="info.txt"
-
 # List of Python scripts to execute
 python_scripts=("avi.py" "h264.py" "hevc.py" "vp9.py")
 
 # Clear the contents of the output file or create a new one
 > "$output_file"
-
+echo "Size of inputvid.mp4 is" $(du -h inputvid.mp4 | cut -f1) >> "$output_file"
 for script in "${python_scripts[@]}"; do
     echo "Running $script..."
 
@@ -23,7 +21,7 @@ for script in "${python_scripts[@]}"; do
 
     # Calculate the execution time
     execution_time=$(echo "$end_time - $start_time" | bc)
-    echo "Execution Time for $script: $execution_time seconds"
+    # echo "Execution Time for $script: $execution_time seconds"
 
     echo "Execution Time for $script: $execution_time seconds" >> "$output_file"
 done
