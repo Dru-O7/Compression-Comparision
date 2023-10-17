@@ -25,11 +25,15 @@ for script in "${python_scripts[@]}"; do
     execution_time=$(echo "$end_time - $start_time" | bc)
     echo "Execution Time for $script: $execution_time seconds"
 
-    # Find and print the size of the Python script
-    file_size=$(du -h "$script" | cut -f1)
-    echo "File Size of $script: $file_size"
-
-    # Append the information to the output file
     echo "Execution Time for $script: $execution_time seconds" >> "$output_file"
-    echo "File Size of $script: $file_size" >> "$output_file"
+done
+
+output=("output_xvid.avi" "output_h264.mp4" "output_hevc.mp4" "output_vp9.mp4")
+
+for video_file in "${output[@]}"; do
+    echo "Calculating the size of $video_file..."
+
+    # Get the size of the output video
+    output_video_size=$(du -h "$video_file" | cut -f1)
+    echo "Size of $video_file: $output_video_size" >> "$output_file"
 done
