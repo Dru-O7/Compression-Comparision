@@ -2,7 +2,7 @@
 # Name of the output file
 output_file="info.txt"
 # List of Python scripts to execute
-python_scripts=("avi.py" "h264.py" "hevc.py" "vp9.py")
+python_scripts=("av1.py" "h264.py" "hevc.py" "vp9.py")
 
 # Clear the contents of the output file or create a new one
 > "$output_file"
