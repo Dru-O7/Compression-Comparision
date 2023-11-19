@@ -1,0 +1,9 @@
+Size of inputvid.mp4 is
+Execution Time for avi.py: 3.0 seconds
+Execution Time for h264.py: 0 seconds
+Execution Time for hevc.py: 0 seconds
+Execution Time for vp9.py: 0 seconds
+Size of output_xvid.avi: 
+Size of output_h264.mp4: 
+Size of output_hevc.mp4: 
+Size of output_vp9.mp4: 
